@@ -66,20 +66,14 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
         }
     }
+//
     private void OpenGallery() {
-        // Check for storage permissions based on Android version
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
-            // Android 10 and above do not require explicit permission for gallery access
-            openGalleryIntent();
-        } else {
-            // For Android versions below 10, check for storage permission
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES)
                     == PackageManager.PERMISSION_DENIED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_MEDIA_IMAGES}, STORAGE_PERMISSION_CODE);
             } else {
                 openGalleryIntent();
             }
-        }
     }
 
     private void openGalleryIntent() {
