@@ -2,6 +2,7 @@ package com.example.photogram;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.bumptech.glide.Glide;
 
 public class PhotoEditing extends AppCompatActivity {
-    private ImageView imageView;
+    private ImageView imageView, crop, rotate, filter, text;
     private Uri imageUri;
 
     @Override
@@ -27,6 +28,10 @@ public class PhotoEditing extends AppCompatActivity {
             return insets;
         });
         imageView = findViewById(R.id.imageView);
+        crop = findViewById(R.id.btn_crop);
+        rotate = findViewById(R.id.rotate);
+        filter = findViewById(R.id.filter);
+        text = findViewById(R.id.text);
 
         // Retrieve the image Uri from intent
         String uriString = getIntent().getStringExtra("imageUri");
