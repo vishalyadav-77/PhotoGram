@@ -28,7 +28,7 @@ public class PhotoEditing extends AppCompatActivity {
             return insets;
         });
         imageView = findViewById(R.id.imageView);
-        crop = findViewById(R.id.btn_crop);
+        crop = findViewById(R.id.crop);
         rotate = findViewById(R.id.rotate);
         filter = findViewById(R.id.filter);
         text = findViewById(R.id.text);
